@@ -12,7 +12,7 @@ COPY src/Main.java  /app/Main.java
 
 COPY quotes.txt quotes.txt
 
-# 4 Run the commands to install libs or to compile code 
+# 4 Run the commands to install libs or to compile code
 
 RUN javac Main.java
 
@@ -23,3 +23,4 @@ EXPOSE 8000
 #6 Server the app/ keep it running
 
 CMD ["java","Main"]
+
