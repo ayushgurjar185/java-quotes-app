@@ -1,24 +1,25 @@
-# Use the official OpenJDK 17 image as the base image
-FROM openjdk:17-jdk-alpine
+# 1 Base Images (OS) Develepor will give all information
 
-# Set metadata
-LABEL maintainer="trainwithshubham@gmail.com"
-LABEL version="1.0"
-LABEL description="A Java Quotes application"
+FROM openjdk:17-jdk-slim
 
-# Set the working directory inside the container
+# 2 working directory for the app
+
 WORKDIR /app
 
-# Copy the source code into the container
-COPY src/Main.java /app/Main.java
+# 3 copy the code form your HOST to your container working directory
+
+COPY src/Main.java  /app/Main.java
 
 COPY quotes.txt quotes.txt
 
-# Compile the Java code
+# 4 Run the commands to install libs or to compile code 
+
 RUN javac Main.java
 
-# Expose port 8000 for the HTTP server
+# 5  Expose the port
+
 EXPOSE 8000
 
-# Run the Java application when the container starts
-CMD ["java", "Main"]
+#6 Server the app/ keep it running
+
+CMD ["java","Main"]
