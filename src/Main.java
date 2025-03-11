@@ -10,8 +10,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import javax.swing.*;
 
 public class Main {
+     JFrame jframe = new JFrame("GUI Screen");
+     jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     jframe.setSize(400,400);         //set size of GUI screen
+     jframe.setVisible(true);
     private static List<String> quotes;
     
     public static void main(String[] args) throws IOException {
